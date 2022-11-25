@@ -9,6 +9,7 @@ COPY pypl2.crt /etc/ssl/certs/pypl2.crt
 
 EXPOSE 5000
 WORKDIR /app
-RUN pip install flask
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 COPY . .
 CMD [ "flask", "run", "--host", "0.0.0.0" ]
