@@ -7,6 +7,7 @@ import models
 
 from resources.item import blp as ItemBluePrint
 from resources.store import blp as StoreBluePrint
+from resources.tag import blp as TagBluePrint
 
 
 def create_app(db_url=None):
@@ -42,5 +43,6 @@ def create_app(db_url=None):
 
     api.register_blueprint(ItemBluePrint)
     api.register_blueprint(StoreBluePrint)
+    api.register_blueprint(TagBluePrint)
 
     return app
