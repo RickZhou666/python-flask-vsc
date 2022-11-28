@@ -5,6 +5,7 @@ class PlainItemSchema(Schema):
     # data include below variables
     name = fields.Str(required=True)
     price = fields.Float(required=True)
+    description = fields.Str(required=False)
 
 class PlainStoreSchema(Schema):
     id = fields.Int(dump_only=True) # dump_only, it will be only used for sending data back
