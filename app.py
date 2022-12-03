@@ -22,6 +22,7 @@ from resources.user import blp as UserBluePrint
 def create_app(db_url=None):
     app = Flask(__name__)
     load_dotenv()
+    print(os.getenv("REDIS_URL"))
     connection = redis.from_url(
         os.getenv("REDIS_URL")
     )

@@ -102,6 +102,6 @@ class User(MethodView):
 
 @blp.route("/user")
 class UserGet(MethodView):
-    @blp.response(200, UserSchema(many=True))
+    @blp.response(200, UserRegisterSchema(many=True))
     def get(self):
         return UserModel.query.all()
