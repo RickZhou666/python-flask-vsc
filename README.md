@@ -119,7 +119,7 @@ $  ssh-keygen -t rsa -b 4096 -C "runzhou666@gmail.com"
 
 3. clone repo to local
 ```bash
-git clone git@github.paypal.com:runzhou/python-flask-vsc.git
+git clone git@github.com:RickZhou666/python-flask-vsc.git
 ```
 
 4. check port avaialble to avoid conflict
