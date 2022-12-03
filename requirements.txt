@@ -11,4 +11,4 @@ psycopg2
 flask-swagger-ui
 requests
 rq
-redis
+redis==4.3.4
