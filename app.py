@@ -22,9 +22,8 @@ from resources.user import blp as UserBluePrint
 def create_app(db_url=None):
     app = Flask(__name__)
     load_dotenv()
-
     connection = redis.from_url(
-        os.getenv("REDIS.URL")
+        os.getenv("REDIS_URL")
     )
 
     app.queue = Queue("emails", connection=connection)
@@ -38,7 +37,6 @@ def create_app(db_url=None):
 
     # app.config["OPENAPI_SWAGGER_UI_PATH"] = "/api/docs" # URL for exposing Swagger UI (without trailing '/')
     # app.config["OPENAPI_SWAGGER_UI_URL"] = "http://petstore.swagger.io/v2/swagger.json" # Our API url (can of course be a local resource)
-
     # app.config["OPENAPI_SWAGGER_UI_URL"] = "https://github.com/swagger-api/swagger-ui"
     # app.config["OPENAPI_SWAGGER_UI_URL"] = "https://github.com/swagger-api/swagger-ui/blob/master/dist"
     # app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist"
@@ -51,7 +49,6 @@ def create_app(db_url=None):
 
     # migrate = Migrate(app, db, compare_type=True)
     migrate = Migrate(app, db)
-
     api = Api(app)
 
     app.config["JWT_SECRET_KEY"] = "jose"
