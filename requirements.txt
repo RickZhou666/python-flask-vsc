@@ -8,3 +8,5 @@ passlib
 flask-migrate
 gunicorn
 psycopg2
+flask-swagger-ui
+requests

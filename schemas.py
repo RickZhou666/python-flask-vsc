@@ -50,3 +50,7 @@ class UserSchema(Schema):
     password = fields.Str(required=True, load_only=True)
     # below will return password string
     # password = fields.Str(required=True)
+
+
+class UserRegisterSchema(UserSchema):
+    email = fields.Str(required=True)

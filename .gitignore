@@ -6,5 +6,6 @@ data.db
 *.pyc
 .DS_Store
 *.crt
-models/__pycache__
-resources/__pycache__
+./models/__pycache__/*.pyc
+./migrations/versions/__pycache__/*.pyc
+./resources/__pycache__/*.pyc

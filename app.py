@@ -5,6 +5,7 @@ from flask_smorest import Api
 from flask_jwt_extended import JWTManager
 from flask_migrate import Migrate
 from dotenv import load_dotenv
+# from flask_swagger_ui import get_swaggerui_blueprint
 
 from db import db
 from blocklist import BLOCKLIST
@@ -18,17 +19,23 @@ from resources.user import blp as UserBluePrint
 
 def create_app(db_url=None):
     app = Flask(__name__)
-    # load_dotenv()
+    load_dotenv()
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
     app.config["API_TITLE"] = "Stores REST API"
     app.config["API_VERSION"] = "v1"
     app.config["OPENAPI_VERSION"] = "3.0.3"
     app.config["OPENAPI_URL_PREFIX"] = "/"
-    app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui"
+
+    app.config["OPENAPI_SWAGGER_UI_PATH"] = "/swagger-ui" # URL for exposing Swagger UI (without trailing '/')
+    app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist/" # Our API url (can of course be a local resource)
+
+    # app.config["OPENAPI_SWAGGER_UI_PATH"] = "/api/docs" # URL for exposing Swagger UI (without trailing '/')
+    # app.config["OPENAPI_SWAGGER_UI_URL"] = "http://petstore.swagger.io/v2/swagger.json" # Our API url (can of course be a local resource)
+
     # app.config["OPENAPI_SWAGGER_UI_URL"] = "https://github.com/swagger-api/swagger-ui"
     # app.config["OPENAPI_SWAGGER_UI_URL"] = "https://github.com/swagger-api/swagger-ui/blob/master/dist"
-    app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist"
+    # app.config["OPENAPI_SWAGGER_UI_URL"] = "https://cdn.jsdelivr.net/npm/swagger-ui-dist"
     # app.config["OPENAPI_SWAGGER_UI_URL"] = "http://infrasrv-uat-skynet-vip.us-central1.gcp.dev.paypalinc.com/"
 
     # define db uri
