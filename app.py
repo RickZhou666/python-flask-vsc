@@ -36,7 +36,8 @@ def create_app(db_url=None):
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 
-    migrate = Migrate(app, db, compare_type=True)
+    # migrate = Migrate(app, db, compare_type=True)
+    migrate = Migrate(app, db)
 
     api = Api(app)
 
