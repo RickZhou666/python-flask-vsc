@@ -6,3 +6,5 @@ data.db
 *.pyc
 .DS_Store
 *.crt
+models/__pycache__
+resources/__pycache__
