@@ -5,6 +5,7 @@
 ```bash
 $ pip install -r requirements.txt
 $ pip --default-timeout=2000 install -r requirements.txt
+$ pip install --no-cache-dir -r requirements.txt
 
 $ pip uninstall -r requirements.txt -y
 
