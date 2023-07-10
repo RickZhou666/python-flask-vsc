@@ -1,4 +1,26 @@
+# Python Setup
+
+## 1. Tips
+
+### 1.1 with open mode
+```python
+# https://codeahoy.com/learn/tutorials/python-open/
+Mode   Description	                          File Pointer Position	      Creates File if Not Exists	      Truncates Existing File
+r      Read-only	                            Beginning of the file	      No	                              No
+r+	   Read and write (updating)	            Beginning of the file	      No	                              No
+w	     Write-only (overwrite or create)	      Beginning of the file	      Yes	                              Yes
+w+	   Write and read (overwrite or create)	  Beginning of the file	      Yes	                              Yes
+a	     Append-only (append or create)	        End of the file	            Yes	                              No
+a+	   Append and read (append or create)	    End of the file	            Yes	                               No
+
+```
+
+
+
+
+
 # python-flask-vsc
+
 
 ## 1. Docker Command
 ### install dependencies
