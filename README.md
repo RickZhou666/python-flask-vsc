@@ -9,6 +9,10 @@ $ pip install --no-cache-dir -r requirements.txt
 
 $ pip uninstall -r requirements.txt -y
 
+# if met subprocess error, try to install a lower version of dep first
+$ pip install mysqlclient=2.1.1
+$ pip install -r requirements.txt
+
 ```
 ### build image
 ```bash
